@@ -22,5 +22,12 @@ def sort_char_dict(char_dict):
     values.sort(reverse=True, key=sort_on)
     return values
 
-def sort_on(values):
-    return values["num"]
+def sort_on(values: tuple[str, int]) -> int:
+    return values[1]
+
+def chars_dict_to_sorted_list(chars: dict[str, int]) -> list[tuple[str, int]]:
+    tuples = []
+    for key in chars:
+        tuples.append((key, chars[key]))
+    sorted_tuples = sorted(tuples, reverse=True, key=sort_on)
+    return sorted_tuples

@@ -1,4 +1,4 @@
-from stats import get_text_length, get_char_dict, sort_char_dict
+from stats import get_text_length, get_char_dict, sort_char_dict, chars_dict_to_sorted_list
 import sys
 
 def get_book_text(file_path):
@@ -14,8 +14,7 @@ def main():
     text = get_book_text(file_path)
     num_words = get_text_length(text)
     char_freq = get_char_dict(text)
-    sorted_chars = sort_char_dict(char_freq)
-
+    sorted_chars = chars_dict_to_sorted_list(char_freq)
     print("============ BOOKBOT ============")
     print(f"Analyzing book found at {file_path}...")
     print("----------- Word Count ----------")
